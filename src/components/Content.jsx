@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Content({ styles, editMode }) {
+export default function Content({ styles, editMode, contentRef }) {
   const [fullName, setFullName] = useState("Abdulloh Umarov");
   const [address, setAddress] = useState(
     "Uzbekistan, Fergana,\nTadbirkorlar 186"
@@ -20,7 +20,7 @@ export default function Content({ styles, editMode }) {
   };
 
   return (
-    <div>
+    <div ref={contentRef}>
       <h1 style={{ fontFamily: styles.defaultFont }}>{fullName}</h1>
 
       {/* Name */}
